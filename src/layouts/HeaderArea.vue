@@ -12,6 +12,14 @@
           <li class="nav-item"><router-link class="nav-link" to="/">제품리스트</router-link></li>
           <li class="nav-item"><router-link class="nav-link" to="/detail">제품상세페이지</router-link></li>
           <li class="nav-item"><router-link class="nav-link" to="/sales">제품등록페이지</router-link></li>
+
+          <li v-if="this.$store.state.user === null" class="nav-item"><button class="btn btn-danger" type="button" @click="login">로그인</button></li>
+          <li v-if="this.$store.state.user !== null" class="nav-item">
+            <button class="btn btn-danger" type="button" @click="logout">로그아웃</button>
+            <span style="color:white">{{this.$store.state.user.username}}</span>
+          </li>
+          
+
         </ul>
         <form class="d-flex">
           <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
@@ -28,5 +36,14 @@
 <script>
 export default {
   name: 'HeaderArea',
+  methods: {
+    login(){
+      this.$router.push('/login');
+    },
+    logout(){
+      this.$store.state.user = null;
+    }
+
+  }
 };
 </script>

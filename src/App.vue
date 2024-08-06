@@ -1,17 +1,16 @@
 <template>
-  <div>
-    <HeaderArea/>
-    <router-view/>
-    <FooterArea/>
-    </div>
+  <HeaderArea/>
+  <router-view/>
+  <FooterArea/>
 </template>
 
 <script>
+// import { defineComponent } from '@vue/composition-api';
 import HeaderArea from './layouts/HeaderArea.vue';
 import FooterArea from './layouts/FooterArea.vue';
 
 export default {
-  components: { HeaderArea, FooterArea},
+  components:{HeaderArea, FooterArea},
   setup() {
     
   },
