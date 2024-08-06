@@ -1,7 +1,6 @@
 <template>
   <div>
     <HeaderArea/>
-  
     <router-view/>
     <FooterArea/>
     </div>
